@@ -14,7 +14,7 @@ print("|                                                |")
 print("+------------------------------------------------+\n")
 
 print("Comment controler le Servo ?")
-choix = int(input("1. Choisir un angle\n2. Faire tourner de 0 a 180\n"))
+choix = int(input("1. Choisir un angle\n2. Faire tourner de 0 a 100%\n"))
 
 if choix == 2 :
 
@@ -40,13 +40,13 @@ if choix == 2 :
     GPIO.cleanup()
 
 if choix == 1 :
-    angle = input("Entrez l'angle souhaite :\n")
+    angle = input("Entrez l'angle souhaite (Entre 0 et 100 %):\n")
     duree = input("Entrez la duree durant laquelle le Servo devra tenir sa position : ( en secondes )\n")
 
     pwm=GPIO.PWM(17,100)
     pwm.start(5)
 
-    angleChoisi = float(angle)/10 + ajoutAngle
-    pwm.ChangeDutyCycle(angleChoisi)
+    #angleChoisi = float(angle)/10 + ajoutAngle
+    pwm.ChangeDutyCycle(angle)
     time.sleep(duree)
     GPIO.cleanup()
