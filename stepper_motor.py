@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
+timer = 0.0010
+
 out1 = 13
 out2 = 11
 out3 = 15
@@ -27,7 +29,7 @@ try:
 		GPIO.output(out3, GPIO.LOW)
 		GPIO.output(out4, GPIO.LOW)
 		x = input()
-		if x > 0 and x <= 400:
+		if x > 0:
 			for y in range(x, 0, -1):
 				if negative == 1:
 					if i == 7:
@@ -43,56 +45,56 @@ try:
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 1:
 					GPIO.output(out1, GPIO.HIGH)
 					GPIO.output(out2, GPIO.HIGH)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 2:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.HIGH)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 3:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.HIGH)
 					GPIO.output(out3, GPIO.HIGH)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 4:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.HIGH)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 5:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.HIGH)
 					GPIO.output(out4, GPIO.HIGH)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 6:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.HIGH)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 7:
 					GPIO.output(out1, GPIO.HIGH)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.HIGH)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				if i == 7:
 					i = 0
@@ -100,7 +102,7 @@ try:
 				i = i + 1
 
 
-		elif x < 0 and x >= -400:
+		elif x < 0:
 			x = x * -1
 			for y in range(x, 0, -1):
 				if positive == 1:
@@ -117,56 +119,56 @@ try:
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 1:
 					GPIO.output(out1, GPIO.HIGH)
 					GPIO.output(out2, GPIO.HIGH)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 2:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.HIGH)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 3:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.HIGH)
 					GPIO.output(out3, GPIO.HIGH)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 4:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.HIGH)
 					GPIO.output(out4, GPIO.LOW)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 5:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.HIGH)
 					GPIO.output(out4, GPIO.HIGH)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 6:
 					GPIO.output(out1, GPIO.LOW)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.HIGH)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				elif i == 7:
 					GPIO.output(out1, GPIO.HIGH)
 					GPIO.output(out2, GPIO.LOW)
 					GPIO.output(out3, GPIO.LOW)
 					GPIO.output(out4, GPIO.HIGH)
-					time.sleep(0.03)
+					time.sleep(timer)
 				# time.sleep(1)
 				if i == 0:
 					i = 7
